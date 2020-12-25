@@ -126,9 +126,7 @@ model5.summary()
 모델의 성능은 다음과 같습니다.
 
 ![ACC Plot](images/모델5-acc.png)
-
 ![Loss Plot](images/모델5-loss.png)
-
 ![성능](images/모델5-성능평가.png)
 
 ## 결과

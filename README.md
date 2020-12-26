@@ -20,7 +20,11 @@ CNN 모델을 만들어 기존에 제공된 DataSet(45,000장)을 활용해 학�
 
 ### 전처리
 학습 데이터셋은 _.tar.gz_ 확장자의 압축 파일로 제공되었으며 구글 드라이브를 통해 관리하였습니다.
-<script src="https://gist.github.com/p-heebong/8e332006e13dbfc5374e152d9c9be366.js"></script>
+```py
+#구글 드라이브와 연결
+from google.colab import drive
+drive.mount('/content/gdrive')
+```
 Colab에서 구글 드라이브와 연동하는 방법은 위와 같습니다.
 
 리눅스 명령어를 통해 압축을 해제하고 분류해야 할 파일들을 각 클래스에 맞게 폴더로 이동하였습니다.
@@ -53,7 +57,7 @@ file_dir = r'images'
 ```
 
 Train Set과 Valid Set을 나누기 위해 ImageDataGenerator를 사용했으며 효과적인 학습을 위해 *shear_range: 0.2, zoom_range: 0.2, horizontal_flip: True*로 설정했고, split은 *8:2*로 진행하였습니다.
-```
+```py
 #사진의 정보를 ImageDataGenerator을 통해 학습에 적합한 데이터로 변경
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
@@ -86,7 +90,7 @@ VGGNet은 옥스포트 대학의 연구팀인 VGG에 의해 개발된 모델로,
 
 ![model](images/model.png)
 
-```
+```py
 #모델5 - Dropout만 적용, Rescaling 적용 모델 1과 비교
 model5 = keras.Sequential([
                           Input(shape=(300, 300, 3), name='input_layer'),

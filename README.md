@@ -20,11 +20,7 @@ CNN 모델을 만들어 기존에 제공된 DataSet(45,000장)을 활용해 학�
 
 ### 전처리
 학습 데이터셋은 _.tar.gz_ 확장자의 압축 파일로 제공되었으며 구글 드라이브를 통해 관리하였습니다.
-```
-#구글 드라이브와 연결
-from google.colab import drive
-drive.mount('/content/gdrive')
-```
+<script src="https://gist.github.com/p-heebong/8e332006e13dbfc5374e152d9c9be366.js"></script>
 Colab에서 구글 드라이브와 연동하는 방법은 위와 같습니다.
 
 리눅스 명령어를 통해 압축을 해제하고 분류해야 할 파일들을 각 클래스에 맞게 폴더로 이동하였습니다.
